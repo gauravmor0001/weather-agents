@@ -9,7 +9,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-api_key = os.getenv("GEMINI_API_KEY") or st.secrets["GEMINI_API_KEY"]
+api_key = st.secrets.get("GEMINI_API_KEY")
 genai.configure(api_key=api_key)
 
 def get_weather(city: str):
